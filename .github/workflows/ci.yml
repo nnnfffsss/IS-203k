@@ -1,0 +1,43 @@
+```
+name: Project Integrity Check
+
+# 1. Триггеры: когда должен запускаться скрипт
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+# 2. Задачи (Jobs)
+jobs:
+  verify-files:
+    # Выбор операционной системы виртуальной машины
+    runs-on: ubuntu-latest
+
+    # 3. Шаги выполнения (Steps)
+    steps:
+      # Шаг 1: Скачивание кода репозитория на виртуальную машину
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Шаг 2: Выполнение shell-скрипта для проверки структуры проекта
+      - name: Check required files
+        run: |
+          echo "Запуск проверки целостности проекта..."
+          
+          if [ -f "index.html" ]; then
+            echo "Файл index.html найден."
+          else
+            echo "Ошибка: index.html отсутствует!"
+            exit 1
+          fi
+
+          if [ -f "CHANGELOG.md" ]; then
+            echo "Файл CHANGELOG.md найден."
+          else
+            echo "Ошибка: CHANGELOG.md отсутствует!"
+            exit 1
+          fi
+          
+          echo "Все проверки успешно пройдены!"
+```
