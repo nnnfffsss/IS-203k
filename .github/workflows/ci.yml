@@ -3,9 +3,9 @@ name: Project Integrity Check
 # 1. Триггеры: когда должен запускаться скрипт
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 # 2. Задачи (Jobs)
 jobs:
@@ -23,7 +23,7 @@ jobs:
       - name: Check required files
         run: |
           echo "Запуск проверки целостности проекта..."
-          
+
           if [ -f "index.html" ]; then
             echo "Файл index.html найден."
           else
@@ -37,6 +37,5 @@ jobs:
             echo "Ошибка: CHANGELOG.md отсутствует!"
             exit 1
           fi
-          
+
           echo "Все проверки успешно пройдены!"
-          
