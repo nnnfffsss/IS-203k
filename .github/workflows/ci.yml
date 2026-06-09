@@ -19,6 +19,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+         node-version: '20'
+       
+      - name: Install dependencies
+        run: npm ci
+       
+      - name: Check code formatting
+        run: npx prettier --check .
+        
       # Шаг 2: Выполнение shell-скрипта для проверки структуры проекта
       - name: Check required files
         run: |
