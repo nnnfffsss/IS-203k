@@ -1,0 +1,24 @@
+{
+  "name": "is-203k",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nnnfffsss/IS-203k.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/nnnfffsss/IS-203k/issues"
+  },
+  "homepage": "https://github.com/nnnfffsss/IS-203k#readme",
+  "devDependencies": {
+    "prettier": "^3.8.4"
+  }
+}
